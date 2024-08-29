@@ -133,13 +133,13 @@ echo "Application Gateway and WAF Policy have been created and configured succes
 ```bash
 Set-AzVMExtension -ResourceGroupName exp2_group -ExtensionName IIS -VMName exp2 -Publisher Microsoft.Compute -ExtensionType CustomScriptExtension -TypeHandlerVersion 1.4 -SettingString '{"commandToExecute":"powershell Add-WindowsFeature Web-Server; powershell Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"}' -Location CentralIndia
 ```
-13.Next i made some custom rules and try to block traffic from certian ip address and certian regions using WAF custom rules and changed the mode to prevention mode from detection mode.
-14.A standard virtual hub has no built-in security policies to protect the resources in spoke virtual networks. A secured virtual hub uses Azure Firewall or a third-party provider to manage incoming and outgoing traffic to protect your resources in Azure. So i deployed an azure firewall in the hub to make it a secured hub.
-15. Before enabling the firewall all routes are allowed to all peered networks but after the firewall is deployed only the explicitly allowed connections are able to connect
-16. Using the firewall manager> secured hub> security configurations i changed the private traffic to go through firewall.
-17 I made a firewall policy using the network rules to allow P2S user to communicate with business only vm. Nobdy else from the peered networks can connect to business VM now.
-18.Associalted the policy with the Hub in firewall manager
-19. Next i put load balancer to manange the TCP/IP request to Businees only vms
+## 13.Next i made some custom rules and try to block traffic from certian ip address and certian regions using WAF custom rules and changed the mode to prevention mode from detection mode.
+## 14.A standard virtual hub has no built-in security policies to protect the resources in spoke virtual networks. A secured virtual hub uses Azure Firewall or a third-party provider to manage incoming and outgoing traffic to protect your resources in Azure. So i deployed an azure firewall in the hub to make it a secured hub.
+## 15. Before enabling the firewall all routes are allowed to all peered networks but after the firewall is deployed only the explicitly allowed connections are able to connect
+## 16. Using the firewall manager> secured hub> security configurations i changed the private traffic to go through firewall.
+## 17 I made a firewall policy using the network rules to allow P2S user to communicate with business only vm. Nobdy else from the peered networks can connect to business VM now.
+## 18.Associalted the policy with the Hub in firewall manager
+## 19. Next i put load balancer to manange the TCP/IP request to Businees only vms
 ```bash
 #!/bin/bash
 
@@ -207,7 +207,7 @@ az network lb rule create \
 
 echo "Azure Load Balancer with private frontend and associated resources have been created successfully."
 ```
-20.Added the frontend private ip address to the firewall rules to access from on prem vpn and the request successly executed.
-21. Next i added a storage accout and made private enpoint for that in TAXI vnet using a special subnet for private endpoint for azure files
-22. Now i can access the Storage account file storage from the vnet but not anyplace else. I want it to be accessible from on prem environmet as well through the hub and firewall. 
+## 20.Added the frontend private ip address to the firewall rules to access from on prem vpn and the request successly executed.
+## 21. Next i added a storage accout and made private enpoint for that in TAXI vnet using a special subnet for private endpoint for azure files
+## 22. Now i can access the Storage account file storage from the vnet but not anyplace else. I want it to be accessible from on prem environmet as well through the hub and firewall. 
 
