@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# run this script to create van, hub and p2s vpn gateway and change appropriate values to your own
 # Variables
 location="eastus"  # Change to your preferred region
 resourceGroupName="MyResourceGroup"
