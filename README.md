@@ -349,8 +349,10 @@ Using Private dns resolver and used the inbound ip confired in that as DNS serve
 ![Screenshot 2024-08-31 143753](https://github.com/user-attachments/assets/be646b62-2934-4161-96bd-61f143639750)
 ![Screenshot 2024-08-31 143808](https://github.com/user-attachments/assets/ebcad8c5-98ff-4d76-97a8-a179d3d525d5)
 
+![Screenshot 2024-08-31 143923](https://github.com/user-attachments/assets/d53e74c3-6fed-4a29-9bc8-216b5ee295c5)
 
 
+![Screenshot 2024-08-31 144005](https://github.com/user-attachments/assets/b604634f-e00f-4416-bdc5-670cf76a3b83)
 
 
 
