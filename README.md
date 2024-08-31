@@ -218,4 +218,86 @@ echo "Azure Load Balancer with private frontend and associated resources have be
 ## 28. I then chnaged the settings of the vpn dns setting in my win 11 computer to use the ip of the inbound endpoint and subsequently chnaged the dns server of the vnet to inbound ip of the resolver
 ## 29. I used NSlookup before and after doing the setup for the file storage of the storage account and got public ip before and private ip after i confgiured all the settings above.
 ## 30. I mounted the drive using the connect option in the storage account and the connection was successfull and i can access the private endpoint privately 
+![Screenshot 2024-08-24 152359](https://github.com/user-attachments/assets/ed0ea388-0b78-47b5-9bb2-583eb91e9c55)
+
+![Screenshot 2024-08-24 152933](https://github.com/user-attachments/assets/b3033639-02c3-4df6-9d33-eeb63a3bab71)
+
+![Screenshot 2024-08-24 205836](https://github.com/user-attachments/assets/80bb3e2a-0a8f-419e-a83a-ea7e4f9e3690)
+
+![Screenshot 2024-08-24 210736](https://github.com/user-attachments/assets/575ee20c-088e-4800-af99-a81ccf0f31e0)
+
+![Screenshot 2024-08-24 214635](https://github.com/user-attachments/assets/0fee8b72-28ae-4849-9eeb-0f0335e52d4b)
+
+![Screenshot 2024-08-24 215055](https://github.com/user-attachments/assets/5d303a98-2cb4-4daf-98a0-92f21f45b19b)
+
+
+![Screenshot 2024-08-24 215106](https://github.com/user-attachments/assets/936ea4e2-ac02-4458-801d-1729d8dd1969)
+
+
+![Screenshot 2024-08-24 220824](https://github.com/user-attachments/assets/03c68709-2a06-4076-b142-754f11ba5336)
+
+![Screenshot 2024-08-24 221509](https://github.com/user-attachments/assets/b8f2747e-ea65-4342-8c22-37704428fbc7)
+
+Adding certificate data in user conf in WAN
+![Screenshot 2024-08-24 221519](https://github.com/user-attachments/assets/30ae090c-6e6f-425f-8f8b-655406418826)
+
+![Screenshot 2024-08-24 221801](https://github.com/user-attachments/assets/8377ce10-c3ce-46d6-ac85-7fe6bd438f12)
+This deployment of HUB took 40 mins approx
+![Screenshot 2024-08-24 223107](https://github.com/user-attachments/assets/725bf065-a186-49bc-8b86-5838b6007a99)
+Adding connections to wan
+
+![Screenshot 2024-08-24 232024](https://github.com/user-attachments/assets/07f4fba4-19d2-42d5-8250-f31afb8f922e)
+Peerings succesfully added
+![Screenshot 2024-08-24 232449](https://github.com/user-attachments/assets/4d0efaa8-2331-461c-85ea-3231f70158ce)
+Downlaoded and installed the VPN file from the hub 
+![Screenshot 2024-08-24 232939](https://github.com/user-attachments/assets/dc8ac9a9-7f4e-49b9-8786-459144c9ad87)
+
+![Screenshot 2024-08-24 233001](https://github.com/user-attachments/assets/43b137f3-726b-4785-b387-911a2361ea2a)
+Peerings as seen from the connected vnets
+![Screenshot 2024-08-24 233258](https://github.com/user-attachments/assets/ec28310a-eae7-4750-a2ee-d8ba700a24c5)
+pinging of the vms successful from P2S to peered networks to the hub
+![Screenshot 2024-08-24 234634](https://github.com/user-attachments/assets/23c45572-8ac8-4076-a647-47d64a3eb5bc)
+![Screenshot 2024-08-24 234643](https://github.com/user-attachments/assets/24359faf-0f86-4e58-a6cc-b78b482537bd)
+Disabling wins firewall from portal using powershell
+![Screenshot 2024-08-25 145302](https://github.com/user-attachments/assets/c30bfee7-abec-4a71-bae9-7cca43afccd6)
+allowing ICMP from windows firewall from insode the VM
+![Screenshot 2024-08-25 152142](https://github.com/user-attachments/assets/4b21d708-e925-41c0-981b-521fb710ccd4)
+
+App gateway frontend config
+![Screenshot 2024-08-25 163336](https://github.com/user-attachments/assets/345bd3d3-5f28-4e32-9661-704d547173b0)
+
+
+![Screenshot 2024-08-25 164031](https://github.com/user-attachments/assets/2bb66bf5-fdcb-4179-8ea2-c35c14c284ca)
+configures default IIS server on one machine
+![Screenshot 2024-08-25 164907](https://github.com/user-attachments/assets/f489aa82-017e-4110-afe5-07cc2c840493)
+
+![Screenshot 2024-08-25 165345](https://github.com/user-attachments/assets/87ea31c7-36c4-4f34-9af7-54ddeeaa51b7)
+
+
+Both public and private listeners available for the gateway
+![Screenshot 2024-08-25 165926](https://github.com/user-attachments/assets/6920eaa2-ca38-473e-902c-99b4b541853d)
+now connecting using private ip from P2S client
+
+![Screenshot 2024-08-25 170133](https://github.com/user-attachments/assets/0fcaf3f2-cd46-4868-a37c-f4468784be31)
+
+configured IIS on another machine using custom script extension which will show the vm name to test our gateway
+
+```bash
+Set-AzVMExtension -ResourceGroupName exp2_group -ExtensionName IIS -VMName exp2 -Publisher Microsoft.Compute -ExtensionType CustomScriptExtension -TypeHandlerVersion 1.4 -SettingString '{"commandToExecute":"powershell Add-WindowsFeature Web-Server; powershell Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"}' -Location CentralIndia
+```
+![Screenshot 2024-08-25 173428](https://github.com/user-attachments/assets/5e5db90c-0116-4020-abb3-b81b4a009469)
+![Screenshot 2024-08-25 173617](https://github.com/user-attachments/assets/829002b2-1692-43e4-ae64-08fff1eb5125)
+Clicking randomly to private ip of the app gateway the vms change like below
+![Screenshot 2024-08-25 173745](https://github.com/user-attachments/assets/1be1f1c8-a856-4d16-83a8-9a6d2a834a58)
+
+![Screenshot 2024-08-25 173754](https://github.com/user-attachments/assets/a2e3e37f-ef68-42f6-96a8-8da347362d1d)
+Used WAF v2 for the gateway
+![Screenshot 2024-08-25 175736](https://github.com/user-attachments/assets/fabf29d6-b575-4a4a-b0e5-a33b9ce43fab)
+
+![Screenshot 2024-08-25 181423](https://github.com/user-attachments/assets/89b76058-5f60-4ccd-ab50-2afe3bab404f)
+Adding custom rules to not give acces to certain IP address in prevention mode( important)
+
+![Screenshot 2024-08-25 181638](https://github.com/user-attachments/assets/b5c2fda7-0e23-4eff-9908-bd073e42b78c)
+
+
 # LAB CONCLUDED
