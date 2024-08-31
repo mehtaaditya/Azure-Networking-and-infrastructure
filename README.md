@@ -210,4 +210,12 @@ echo "Azure Load Balancer with private frontend and associated resources have be
 ## 20.Added the frontend private ip address to the firewall rules to access from on prem vpn and the request successly executed.
 ## 21. Next i added a storage accout and made private enpoint for that in TAXI vnet using a special subnet for private endpoint for azure files
 ## 22. Now i can access the Storage account file storage from the vnet but not anyplace else. I want it to be accessible from on prem environmet as well through the hub and firewall. 
-
+## 23. At this point its already been 2 days since i started the project and i couldn't figure out what to do to access private endpoint from on prem machines and specifically from P2S devices
+## 24. I destroyed all the hub and spoke network as it already costed me 10000 rs, i came back with a vnet and a storage account and a virtual network gateway and p2s configration to emulate the same sceniario described above but without the hub spokes and firewall
+## 25.After some trial and error method, i found the solution can use Azure private DNS reoslver fully managed service.
+## 26 I connected the vpn to p2s devices again by using the root and child certificate method. Storage account and private endpoint were already in place and a private DNS zone was adlready created.
+## 27. Next i created a private DNS resolver and used the same location as the vnet used. made a new subnet for the vnet of /28 subnet mask and noted the ip of the inbound endpoint of the resolver.
+## 28. I then chnaged the settings of the vpn dns setting in my win 11 computer to use the ip of the inbound endpoint and subsequently chnaged the dns server of the vnet to inbound ip of the resolver
+## 29. I used NSlookup before and after doing the setup for the file storage of the storage account and got public ip before and private ip after i confgiured all the settings above.
+## 30. I mounted the drive using the connect option in the storage account and the connection was successfull and i can access the private endpoint privately 
+# LAB CONCLUDED
