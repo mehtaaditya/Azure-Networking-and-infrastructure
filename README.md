@@ -298,6 +298,62 @@ Used WAF v2 for the gateway
 Adding custom rules to not give acces to certain IP address in prevention mode( important)
 
 ![Screenshot 2024-08-25 181638](https://github.com/user-attachments/assets/b5c2fda7-0e23-4eff-9908-bd073e42b78c)
+accesing the gateway from the restricted IP address i get this 
+![Screenshot 2024-08-25 183756](https://github.com/user-attachments/assets/14376b0c-2562-4cb7-82ff-a5b5f5076d33)
+Setting up firewalin the hub to make secure hub. Connection must be explicitly allowed now
+![Screenshot 2024-08-25 200246](https://github.com/user-attachments/assets/7885828c-a4f1-43c6-8b08-fe0e0e7b6733)
+
+![Screenshot 2024-08-25 204742](https://github.com/user-attachments/assets/df8cc3c2-2062-4890-9108-a69db044ca37)
+Added network rule in firewall policy to allow connection as everything is blocked by default
+![Screenshot 2024-08-25 205726](https://github.com/user-attachments/assets/5b4157e6-3e13-47b7-b729-071dc66cc932)
+![Screenshot 2024-08-25 210234](https://github.com/user-attachments/assets/27eaa8e6-23ea-4c69-9bba-12de922af0f4)
+
+![Screenshot 2024-08-25 211147](https://github.com/user-attachments/assets/d70afaa6-996a-416d-a0cf-281a66ee34ef)
+
+tried to attach premieum poicy to standard firewall which didnt work
+
+![Screenshot 2024-08-25 211816](https://github.com/user-attachments/assets/558b399f-256b-400a-828e-35b35f0867d1)
+
+testing using NCAP
+![Screenshot 2024-08-26 002237](https://github.com/user-attachments/assets/1f0bbd4b-d762-43ce-aeae-6b712512d0ae)
+
+Load Balancer
+
+![Screenshot 2024-08-26 003848](https://github.com/user-attachments/assets/17cb1582-583f-4be7-8db0-c37d3f09feae)
+
+
+
+![Screenshot 2024-08-26 003919](https://github.com/user-attachments/assets/dd8faef9-4068-4fd3-b9dc-2b97f63034cc)
+
+Storage account with private endpoint
+![Screenshot 2024-08-26 114240](https://github.com/user-attachments/assets/d3076f9a-1c11-42bd-9fe2-0dd731a4fcd1)
+![Screenshot 2024-08-26 120302](https://github.com/user-attachments/assets/6e6c903d-eb55-4604-b495-02abec242e5d)
+
+accessing storage endpoint using private address from outside the vnet
+
+![Screenshot 2024-08-26 235925](https://github.com/user-attachments/assets/13356fb2-51c2-4cca-adb2-ddbc2ac286f8)
+normally without the conf it will be like this, using the public ip of the strage acount
+![Screenshot 2024-08-27 101805](https://github.com/user-attachments/assets/3c069732-760f-493e-a9cc-34d34201a2e3)
+Total cost incurred over 3 days. Later i destroyed the resouces and started again with storage account access problem
+![Screenshot 2024-08-27 132043](https://github.com/user-attachments/assets/b7e9b420-3edd-4a1e-bd1d-358655c3d017)
+
+![Screenshot 2024-08-27 132050](https://github.com/user-attachments/assets/e7248fc6-1ad1-4cc4-85ce-f94194c89880)
+Using Private dns resolver and used the inbound ip confired in that as DNS server for the P2S client
+![Screenshot 2024-08-31 004304](https://github.com/user-attachments/assets/668bd2e5-820b-4d09-800a-227e13ba778a)
+
+![Screenshot 2024-08-31 004323](https://github.com/user-attachments/assets/ff155ded-b303-44c5-b641-437f20e9ba02)
+
+
+![Screenshot 2024-08-31 143748](https://github.com/user-attachments/assets/4f663b89-f8c8-4a39-8732-86ad310fa926)
+
+![Screenshot 2024-08-31 143753](https://github.com/user-attachments/assets/be646b62-2934-4161-96bd-61f143639750)
+![Screenshot 2024-08-31 143808](https://github.com/user-attachments/assets/ebcad8c5-98ff-4d76-97a8-a179d3d525d5)
+
+
+
+
+
+
 
 
 # LAB CONCLUDED
