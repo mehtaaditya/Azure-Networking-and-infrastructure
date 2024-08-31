@@ -221,6 +221,11 @@ echo "Azure Load Balancer with private frontend and associated resources have be
 ![Screenshot 2024-08-24 152359](https://github.com/user-attachments/assets/ed0ea388-0b78-47b5-9bb2-583eb91e9c55)
 
 ![Screenshot 2024-08-24 152933](https://github.com/user-attachments/assets/b3033639-02c3-4df6-9d33-eeb63a3bab71)
+![Screenshot 2024-08-31 162104](https://github.com/user-attachments/assets/371e8678-a4f2-4a06-8738-41f42529e73d)
+![Screenshot 2024-08-31 162128](https://github.com/user-attachments/assets/39993ac4-d01f-48e7-bb40-bcb547dee8e0)
+
+
+
 
 ![Screenshot 2024-08-24 205836](https://github.com/user-attachments/assets/80bb3e2a-0a8f-419e-a83a-ea7e4f9e3690)
 
